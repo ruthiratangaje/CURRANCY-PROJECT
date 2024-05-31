@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../CSS/XYZ-COMPANY1.CSS">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="div1">
+            <h1 class="xyz">XYZ-COMPANY</h1>
+            <p class="CURRANCY">CURRENCY EXCHANGE PLATFORM</p>  
+        </div>
+        <div class="div2">
+            <div>
+                <div class="Ammount">
+                    <p>Amount</p>
+                    <input id="Amount" type="number" value="">
+                </div>
+                <div class="from">
+                    <p>FROM</p>
+                    <select id="From">
+                        <option value="">CHOOSE MONEY</option>
+                        <option value="rwf">Rwf</option>
+                        <option value="usd">USD-$</option>
+                        <option value="gbp">pound</option>
+                    </select>
+                </div>
+                <div class="to">
+                    <p>TO</p>
+                    <select id="To">
+                        <option value="">CHOOSE MONEY</option>
+                        <option value="rwf">Rwf</option>
+                        <option value="usd">USD-$</option>
+                        <option value="gbp">pound</option>
+                    </select><br><br>
+                </div>
+                <button style="background-color: blue;color: aliceblue;border-radius: 10px;" onclick="convert()">CONVERT</button>
+                <p id="Result" class="Result">Result:</p>
+                <div id="Results"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function convert() {
+            try {
+            alert("already you start converting!!!");
+            var amount = parseFloat(document.getElementById("Amount").value);
+            var fromCurrency = document.getElementById("From").value;
+            var toCurrency = document.getElementById("To").value;
+            var conversionRate;
+
+            // Dummy conversion rates for demonstration
+            if (fromCurrency === "rwf" && toCurrency === "usd") {
+                conversionRate = 0.001; // 1 Rwf = 0.001 USD
+            } else if (fromCurrency === "usd" && toCurrency === "rwf") {
+                conversionRate = 1000; // 1 USD = 1000 Rwf
+            } else if (fromCurrency === "rwf" && toCurrency === "gbp") {
+                conversionRate = 0.0008; // 1 Rwf = 0.0008 GBP
+            } else if (fromCurrency === "gbp" && toCurrency === "rwf") {
+                conversionRate = 1250; // 1 GBP = 1250 Rwf
+            } else if (fromCurrency === "usd" && toCurrency === "gbp") {
+                conversionRate = 0.72; // 1 USD = 0.72 GBP
+            } else if (fromCurrency === "gbp" && toCurrency === "usd") {
+                conversionRate = 1.39; // 1 GBP = 1.39 USD
+            } else {
+                // Handle other currency combinations or invalid selections
+                alert("Invalid currency selection!");
+                return;
+            }
+
+            var result = amount * conversionRate;
+            document.getElementById("Result").innerHTML = "Result: " + result.toFixed(2) + " " + toCurrency.toUpperCase();
+        } catch (error) {
+                alert(error.message);
+            }
+        }
+
+    </script>
+</body>
+</html>
