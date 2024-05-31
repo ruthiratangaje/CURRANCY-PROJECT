@@ -1,0 +1,48 @@
+.div1{
+background-color: rgb(2, 2, 73);
+color: #fff;
+height: 200px;
+width: 800px;
+margin-left: 300px;
+}
+.xyz{
+    text-align: center;
+}
+.CURRANCY{
+    text-align: center;
+}
+.div2{
+    background-color: #fff;
+    margin-left: 400px;
+    margin-top: -100px;
+    width: 600px;
+}
+.CONVERT{
+    background-color: rgb(3, 3, 75);
+    color: #fff;
+    border-radius: 10px;
+}
+.from{
+    margin-left: 200px;
+    margin-top: -70px;
+}
+.to{
+    margin-left:400px;
+    margin-top: -70px;
+}
+.Result{
+    margin-left: 400px;
+    margin-top:-20px ;
+}
+body{
+    background-color:gray;
+}
+input{
+    border-radius: 10px;
+}
+select{
+    border-radius: 10px;
+}
+.container{
+    margin-top: 200px;
+}
